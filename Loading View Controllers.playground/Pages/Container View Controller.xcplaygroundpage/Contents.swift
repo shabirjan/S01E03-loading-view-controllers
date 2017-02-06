@@ -78,4 +78,5 @@ episodesVC.view.frame = CGRect(x: 0, y: 0, width: 250, height: 300)
 
 
 import XCPlayground
-XCPlaygroundPage.currentPage.liveView = episodesVC
+import PlaygroundSupport
+PlaygroundPage.current.liveView = episodesVC
