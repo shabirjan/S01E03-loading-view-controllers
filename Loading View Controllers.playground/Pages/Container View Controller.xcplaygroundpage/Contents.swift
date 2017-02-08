@@ -54,6 +54,7 @@ final class EpisodeDetailViewController: UIViewController {
     
     convenience init(episode: Episode) {
         self.init()
+        print(episode.title)
         titleLabel.text = episode.title
     }
     
@@ -70,7 +71,7 @@ final class EpisodeDetailViewController: UIViewController {
 let sharedWebservice = Webservice()
 
 let episodesVC = LoadingViewController(load: {  callback in
-    
+   
     sharedWebservice.load(resource: episodeResource, completion: callback)
 }, build: EpisodeDetailViewController.init)
 
@@ -79,4 +80,4 @@ episodesVC.view.frame = CGRect(x: 0, y: 0, width: 250, height: 300)
 
 import XCPlayground
 import PlaygroundSupport
-PlaygroundPage.current.liveView = episodesVC
+PlaygroundPage.current.liveView = episodesVC.view
